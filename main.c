@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 
     // Generate and print passwords
     for (int i = 0; i < quantity; i++) {
-        char password[length + 1];
+        char* password = (char*)malloc((length + 1) * sizeof(char));
         generate_password(alphabet, length, password);
         double information_content = calculate_information_content(password);
 
